@@ -11,7 +11,7 @@ public class LibraryTest {
 
     @Before
     public void setUp(){
-        library = new Library("Unseen University Library");
+        library = new Library("Unseen University Library", 2);
         book = new Book ("Mort", "Terry Pratchett", "Fantasy");
     }
 
@@ -33,6 +33,20 @@ public class LibraryTest {
         library.addBook(book);
         //Then number of books will be 1
         assertEquals(1, library.bookCount());
+    }
 
+    @Test
+    public void canAddBook__ifCapacityIsFull(){
+        //Given I have a library
+        assertNotNull(library);
+        //AND I have a book
+        assertNotNull(book);
+        //When the library is not at capacity
+        
+        //Then I can add a book
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(2, library.bookCount());
     }
 }
