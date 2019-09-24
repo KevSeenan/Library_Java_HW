@@ -18,11 +18,21 @@ public class LibraryTest {
     @Test
     public void countNumberOfBooks(){
         //Given I have a library
-        assertNotNull(library);
-        //AND the library has books
-        assertNotNull(book);
         //When the library has no book
         //Then the number of books will be zero
         assertEquals(0, library.bookCount());
+    }
+
+    @Test
+    public void canAddABook(){
+        //Given I have a library
+        assertNotNull(library);
+        //AND I have a book
+        assertNotNull(book);
+        //When a book is added to the library
+        library.addBook(book);
+        //Then number of books will be 1
+        assertEquals(1, library.bookCount());
+
     }
 }
