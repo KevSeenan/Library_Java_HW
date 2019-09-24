@@ -18,6 +18,7 @@ public class LibraryTest {
     @Test
     public void countNumberOfBooks(){
         //Given I have a library
+        assertNotNull(library);
         //When the library has no book
         //Then the number of books will be zero
         assertEquals(0, library.bookCount());
@@ -42,7 +43,7 @@ public class LibraryTest {
         //AND I have a book
         assertNotNull(book);
         //When the library is not at capacity
-        
+
         //Then I can add a book
         library.addBook(book);
         library.addBook(book);
